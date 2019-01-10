@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UpdateManager"
         mc:Ignorable="d"
-        Title="Smart Home Manager" Height="450" Width="653.201" ResizeMode="NoResize">
+        Title="Smart Home Manager" Height="450" Width="656.201" ResizeMode="NoResize">
     <Grid>
-        <GroupBox Header="MQTT settings" Height="90" VerticalAlignment="Top" Margin="0,0,-0.571,0">
-            <Grid Margin="0,0,-1,1.143">
+        <GroupBox Header="MQTT settings" Height="85" VerticalAlignment="Top" Margin="0,30,0,0">
+            <Grid Margin="0,0,-1,-4">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
@@ -33,12 +33,25 @@
                 <Label x:Name="statusLabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="9.714,7.286,0,0" Grid.Row="1" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Firmware update" HorizontalAlignment="Left" Height="100" Margin="0,90,0,0" VerticalAlignment="Top" Width="647">
+        <GroupBox Header="Firmware update" Height="79" Margin="0,115,0,0" VerticalAlignment="Top">
             <Grid HorizontalAlignment="Left" Margin="0,0,-1.571,-4.429" Width="637">
                 <Label Content="Path to file:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="75,4,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="522"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="75,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="522"/>
                 <Button Content="..." HorizontalAlignment="Left" Margin="602,4,0,0" VerticalAlignment="Top" Width="25" Height="23"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="75,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Version:" HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top"/>
+                <Label Content="Device:" HorizontalAlignment="Left" Margin="200,32,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="deviceListBox" HorizontalAlignment="Left" Margin="253,33,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding comboBoxList}"/>
+                <Button x:Name="uploadButton" Content="Upload" HorizontalAlignment="Left" Margin="388,34,0,0" VerticalAlignment="Top" Width="75" Click="UploadButton_Click"/>
             </Grid>
         </GroupBox>
+        <DockPanel Height="30" LastChildFill="False" VerticalAlignment="Top">
+            <Menu DockPanel.Dock="Top" Height="30">
+                <MenuItem Header="_Options" Height="30" Width="57">
+                    <MenuItem x:Name="newDeviceMenu" Header="_New device" Click="NewDeviceMenu_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <GroupBox Header="MQTT controls" Margin="0,194,0,0"/>
     </Grid>
 </Window>

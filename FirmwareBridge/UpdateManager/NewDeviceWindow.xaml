@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UpdateManager"
+        xmlns:Properties="clr-namespace:UpdateManager.Properties" x:Class="UpdateManager.NewDeviceWindow"
+        mc:Ignorable="d"
+        Title="Device Manager" Height="125.847" Width="315.678">
+    <TabControl Margin="0,0,2,3">
+        <TabItem Header="Add device">
+            <Grid Background="#FFE5E5E5">
+                <Label Content="New device name:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="newDeviceName" HorizontalAlignment="Left" Height="23" Margin="111,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+                <Button x:Name="addDeviceButton" Content="Add new device" HorizontalAlignment="Left" Margin="92,35,0,0" VerticalAlignment="Top" Width="106" Click="AddDeviceButton_Click"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Delete device">
+            <Grid Background="#FFE5E5E5">
+                <Label Content="Select device:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox x:Name="deviceComboBox" HorizontalAlignment="Left" Margin="86,2,0,0" VerticalAlignment="Top" Width="204" ItemsSource="{Binding comboBoxList}"/>
+                <Button x:Name="deleteDeviceButton" Content="Delete device" HorizontalAlignment="Left" Margin="96,35,0,0" VerticalAlignment="Top" Width="94" Click="DeleteDeviceButton_Click"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
